@@ -38,3 +38,21 @@ pub fn into_iter() {
     //println!("languages: {:?}", languages);
     println!("In this case, can not output the collection.")
 }
+
+//iter_mut - This mutably borrows each element of the collection, 
+//allowing for the collection to be modified in place.
+pub fn iter_mut() {
+    let mut languages = vec!["Red", "Green", "White"];
+    println!("Before modifying: {:?}", languages);
+
+    for language in languages.iter_mut() {
+        *language = match language {
+            &mut "Red" => "Blue",
+            &mut "Green" => "Black",
+            &mut "White" => "Purple",
+            _ => "Orange",
+        }
+    }
+
+    println!("After modifying: {:?}", languages);
+}
