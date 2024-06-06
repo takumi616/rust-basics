@@ -1,4 +1,5 @@
 mod array_slice_sample;
+mod string_sample;
 mod hashmap_sample;
 mod for_sample;
 
@@ -15,6 +16,14 @@ fn main() {
     for_sample::iter_mut();
     println!("************************");
     println!("");
+
+    println!("*** Hash map ***");
     hashmap_sample::hashmap();
-    println!("*** Hash map ***")
+    println!("************************");
+    println!("");
+
+    println!("*** Char, str and String ***");
+    string_sample::string();
+    println!("************************");
+    println!("");
 }
