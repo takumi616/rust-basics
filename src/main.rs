@@ -3,6 +3,7 @@ mod for_sample;
 mod hashmap_sample;
 mod vec_sample;
 mod ownership_sample;
+mod string_sample;
 
 
 fn main() {
@@ -25,6 +26,11 @@ fn main() {
 
     println!("*** Vec ***");
     vec_sample::vec();
+    println!("************************");
+    println!("");
+
+    println!("*** String ***");
+    string_sample::string();
     println!("************************");
     println!("");
 }

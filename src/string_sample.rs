@@ -1,20 +1,7 @@
-// pub fn string() {
-//     let s: String = String::from("hello");  
-//     println!("{}", s);
+pub fn string() {
+    let mut greeting: String = String::from("Hello");
+    println!("greeting: {}", greeting);
 
-//     takes_ownership(s);   
-//     println!("returned: {}", s);          
-                                    
-//     let x = 5;                      
-
-//     makes_copy(x);                  
-
-// } 
-
-// fn takes_ownership(some_string: String) { 
-//     println!("{}", some_string);
-// } 
-
-// fn makes_copy(some_integer: i32) { 
-//     println!("{}", some_integer);
-// } 
+    greeting.push_str(", world");
+    println!("greeting: {}", greeting);
+}
