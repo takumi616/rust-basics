@@ -42,11 +42,11 @@ pub fn into_iter() {
 //iter_mut - This mutably borrows each element of the collection, 
 //allowing for the collection to be modified in place.
 pub fn iter_mut() {
-    let mut languages = vec!["Red", "Green", "White"];
-    println!("Before modifying: {:?}", languages);
+    let mut colors = vec!["Red", "Green", "White"];
+    println!("Before modifying: {:?}", colors);
 
-    for language in languages.iter_mut() {
-        *language = match language {
+    for color in colors.iter_mut() {
+        *color = match color {
             &mut "Red" => "Blue",
             &mut "Green" => "Black",
             &mut "White" => "Purple",
@@ -54,5 +54,5 @@ pub fn iter_mut() {
         }
     }
 
-    println!("After modifying: {:?}", languages);
+    println!("After modifying: {:?}", colors);
 }
