@@ -1,14 +1,20 @@
-pub fn string() {
-    let mut genais: Vec<String> = Vec::new();
-    genais.push(String::from("Llama"));
-    genais.push(String::from("Gemini"));
-    println!("genais: {:?}", genais);
-    
-    let mut additional: Vec<String> = Vec::new();
-    additional.push(String::from("Chatgpt"));
-    additional.push(String::from("Cohere"));
-    println!("additional: {:?}", additional);
+// pub fn string() {
+//     let s: String = String::from("hello");  
+//     println!("{}", s);
 
-    genais.append(&mut additional);
-    println!("genais: {:?}", genais);
-}
+//     takes_ownership(s);   
+//     println!("returned: {}", s);          
+                                    
+//     let x = 5;                      
+
+//     makes_copy(x);                  
+
+// } 
+
+// fn takes_ownership(some_string: String) { 
+//     println!("{}", some_string);
+// } 
+
+// fn makes_copy(some_integer: i32) { 
+//     println!("{}", some_integer);
+// } 

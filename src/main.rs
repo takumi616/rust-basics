@@ -1,7 +1,8 @@
 mod array_slice_sample;
-mod string_sample;
-mod hashmap_sample;
 mod for_sample;
+mod hashmap_sample;
+mod vec_sample;
+mod ownership_sample;
 
 
 fn main() {
@@ -22,8 +23,8 @@ fn main() {
     println!("************************");
     println!("");
 
-    println!("*** Char, str and String ***");
-    string_sample::string();
+    println!("*** Vec ***");
+    vec_sample::vec();
     println!("************************");
     println!("");
 }
