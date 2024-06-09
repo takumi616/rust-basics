@@ -1,9 +1,10 @@
 mod array_slice_sample;
 mod for_sample;
 mod hashmap_sample;
-mod vec_sample;
 mod ownership_sample;
+mod slice_sample;
 mod string_sample;
+mod vec_sample;
 
 
 fn main() {
@@ -33,4 +34,9 @@ fn main() {
     string_sample::string();
     println!("************************");
     println!("");
+
+    println!("*** Slice ***");
+    slice_sample::slice();
+    println!("************************");
+    println!("");    
 }
