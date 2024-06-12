@@ -44,7 +44,28 @@ fn modify_vectors() {
     println!("data_structures: {:?}", data_structures);
 }
 
+fn vectors_with_loops() {
+    let colors: Vec<&str> = vec!["blue", "purple", "black"];
+    for color in colors {
+        println!("color: {}", color);
+    }
+
+    let mut colors2: Vec<&str> = vec!["red", "orange", "white"];
+    for color in colors2.iter_mut() {
+        if *color == "white" {
+            *color = "yellow" 
+        }
+    }
+    println!("colors2: {:?}", colors2);
+
+    let height_list: Vec<u32> = vec![183, 175, 178];
+    for (index, height) in height_list.iter().enumerate() {
+        println!("Index {}: height {}", index, height)
+    }
+}
+
 pub fn vec() {
     access_elements();
     modify_vectors();
+    vectors_with_loops();
 }
