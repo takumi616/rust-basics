@@ -1,26 +1,3 @@
-// fn vec_with_string() {
-//     let mut genais: Vec<String> = Vec::new();
-//     genais.push(String::from("Llama"));
-//     genais.push(String::from("Gemini"));
-//     println!("genais: {:?}", genais);
-    
-//     let mut additional: Vec<String> = Vec::new();
-//     additional.push(String::from("Chatgpt"));
-//     additional.push(String::from("Cohere"));
-//     println!("additional: {:?}", additional);
-
-//     genais.append(&mut additional);
-//     println!("genais: {:?}", genais);
-// }
-
-// fn vec_with_str() {
-//     let mut languages: Vec<&str> = vec!["Rust", "Golang", "Python"];
-//     println!("languages: {:?}", languages);
-
-//     languages.push("C++");
-//     println!("languages: {:?}", languages);
-// }
-
 //Access the elemen of Vector
 fn access_elements() {
     let languages: Vec<&str> = vec!["C++", "Rust", "Python"];
@@ -44,6 +21,30 @@ fn access_elements() {
     }
 }
 
+//Modify vector
+fn modify_vectors() {
+    let mut data_structures: Vec<&str> = vec!["stack", "queue", "linkedlist"];
+    println!("data_structures: {:?}", data_structures);
+
+    data_structures.push("hashtable");
+    println!("data_structures: {:?}", data_structures);
+
+    data_structures[1] = "array";
+    println!("data_structures: {:?}", data_structures);
+
+    let popped: Option<&str> = data_structures.pop();
+    match popped {
+        Some(popped_data_structure) => println!("Popped data structure: {}", popped_data_structure),
+        None => println!("not found"),
+    }
+    println!("data_structures: {:?}", data_structures);
+
+    let removed: &str = data_structures.remove(1);
+    println!("removed data structure: {}", removed);
+    println!("data_structures: {:?}", data_structures);
+}
+
 pub fn vec() {
     access_elements();
+    modify_vectors();
 }
