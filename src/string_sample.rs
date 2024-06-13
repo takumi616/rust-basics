@@ -21,9 +21,9 @@ fn substrings() {
 }
 
 fn string_with_loops() {
-    let cripto: String = String::from("kkRkuskt kis qukkitek fkun.");
-    let cripto_str: &str = cripto.as_str();
-    let mut characters: Vec<&str> = cripto_str.split("").collect();
+    let code: String = String::from("kkRkuskt kis qukkitek fkun.");
+    let code_str: &str = code.as_str();
+    let mut characters: Vec<&str> = code_str.split("").collect();
     let mut result: String = String::from("");
     for character  in characters.iter_mut() {
         if character != &mut "k" {
@@ -33,7 +33,14 @@ fn string_with_loops() {
     println!("my secret message is: {}", result);
 }
 
-
+fn combine_strings() {
+    let language: String = String::from("Rust");
+    let additional: &str = ", Golang, Python";
+    let languages: String = language + additional;
+    let count: i32 = 3;
+    let sentence: String = format!("My favorite languages are these {} languages: {}", count, languages);
+    println!("sentence: {}", sentence);
+}
 
 // fn string_with_vec() {
 //     let countries: Vec<String> = vec![
@@ -71,5 +78,6 @@ pub fn string() {
     simple_string();
     substrings();
     string_with_loops();
+    combine_strings();
     //string_with_vec();
 }
