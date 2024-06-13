@@ -20,6 +20,19 @@ fn substrings() {
     println!("sliced part is: {}", language);
 }
 
+fn string_with_loops() {
+    let cripto: String = String::from("kkRkuskt kis qukkitek fkun.");
+    let cripto_str: &str = cripto.as_str();
+    let mut characters: Vec<&str> = cripto_str.split("").collect();
+    let mut result: String = String::from("");
+    for character  in characters.iter_mut() {
+        if character != &mut "k" {
+            result.push_str(character);
+        }
+    }
+    println!("my secret message is: {}", result);
+}
+
 
 
 // fn string_with_vec() {
@@ -57,5 +70,6 @@ fn substrings() {
 pub fn string() {
     simple_string();
     substrings();
+    string_with_loops();
     //string_with_vec();
 }
