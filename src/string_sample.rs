@@ -1,44 +1,61 @@
+// pub struct String {
+//     vec: Vec<u8>,
+// }
+
+
 fn simple_string() {
-    let mut greeting: String = String::from("Hello");
-    println!("greeting: {}", greeting);
+    //define sentence with mut to be able to push str to it
+    let mut sentence: String = String::from("Rust is a programming language");
+    sentence.push_str(" which is mainly used in system programming.");
+    println!("sentence: {}", sentence);
 
-    greeting.push_str(", world");
-    println!("greeting: {}", greeting);
+    let count: usize = sentence.matches("programming").count();
+    println!("programming appears {} times", count);
 }
 
-fn string_with_vec() {
-    let countries: Vec<String> = vec![
-        String::from("United states"),
-        String::from("Germany"),
-        String::from("Russia"),
-    ];
-    println!("countries: {:?}", countries);
-
-    //Use iter()
-    for country in countries.iter() {
-        match country.as_str() {
-            "United states" => println!("It's United states"),
-            "Germany" => println!("It's Germany"),
-            "Russia" => println!("It's Russia"),
-            _ => println!(""),
-        }
-    }
-    println!("countries: {:?}", countries);
-
-    //use into_iter()
-    for country in countries.into_iter() {
-        match country.as_str() {
-            "United states" => println!("It's United states"),
-            "Germany" => println!("It's Germany"),
-            "Russia" => println!("It's Russia"),
-            _ => println!(""),
-        }
-    }
-    //println!("countries: {:?}", countries);
-    println!("can not print countries because into_iter() consumes each value of Vec<String>.")
+fn substrings() {
+    let task: String = String::from("Learn the String type of Rust.");
+    let length:usize = task.len();
+    let language: &str = &task[length-5..length-1];
+    println!("sliced part is: {}", language);
 }
+
+
+
+// fn string_with_vec() {
+//     let countries: Vec<String> = vec![
+//         String::from("United states"),
+//         String::from("Germany"),
+//         String::from("Russia"),
+//     ];
+//     println!("countries: {:?}", countries);
+
+//     //Use iter()
+//     for country in countries.iter() {
+//         match country.as_str() {
+//             "United states" => println!("It's United states"),
+//             "Germany" => println!("It's Germany"),
+//             "Russia" => println!("It's Russia"),
+//             _ => println!(""),
+//         }
+//     }
+//     println!("countries: {:?}", countries);
+
+//     //use into_iter()
+//     for country in countries.into_iter() {
+//         match country.as_str() {
+//             "United states" => println!("It's United states"),
+//             "Germany" => println!("It's Germany"),
+//             "Russia" => println!("It's Russia"),
+//             _ => println!(""),
+//         }
+//     }
+//     //println!("countries: {:?}", countries);
+//     println!("can not print countries because into_iter() consumes each value of Vec<String>.")
+// }
 
 pub fn string() {
     simple_string();
-    string_with_vec();
+    substrings();
+    //string_with_vec();
 }
