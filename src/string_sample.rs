@@ -17,16 +17,16 @@ fn substrings() {
     let task: String = String::from("Learn the String type of Rust.");
     let length:usize = task.len();
     let language: &str = &task[length-5..length-1];
-    println!("sliced part is: {}", language);
+    println!("extracted part is: {}", language);
 }
 
 fn string_with_loops() {
     let code: String = String::from("kkRkuskt kis qukkitek fkun.");
     let code_str: &str = code.as_str();
-    let mut characters: Vec<&str> = code_str.split("").collect();
+    let characters: Vec<&str> = code_str.split("").collect();
     let mut result: String = String::from("");
-    for character  in characters.iter_mut() {
-        if character != &mut "k" {
+    for character  in characters.into_iter() {
+        if character !=  "k" {
             result.push_str(character);
         }
     }
