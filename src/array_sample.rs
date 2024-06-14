@@ -1,21 +1,28 @@
 use std::mem;
 
+fn str_array() {
+    let mut languages: [&str; 3] = ["C++", "Rust", "Python"];
+    languages[2] = "Golang";
+    println!("{}", format!("Array size is {}. languages: {:?}", languages.len(), languages));  
+}
+
+fn int_array() {
+    let mut height_list: [i32; 5] = [178, 175, 183, 180, 174];
+    //Returns the size of the pointed-to value in bytes.
+    let byte_size: usize = mem::size_of_val(&height_list);
+    match byte_size == 4 * height_list.len() {
+        true =>  println!("Array occupies {} bytes", byte_size),
+        false => println!("Failed to get exact byte size."),
+    }
+
+    let mut first_element: &i32 =  height_list.get(0).unwrap();
+    println!("first element: {}", first_element);
+    first_element = &182;
+    height_list[0] = *first_element;
+    println!("height_list: {:?}", height_list);
+}
+
 pub fn array() {
-    // Fixed-size array 
-    //let xs: [i32; 5] = [1, 2, 3, 4, 5];
-    let num_list: [i32; 4] = [6, 16, 26, 36];
-    println!("First element of the num_list: {}", num_list[0]);
-    println!("Second element of the num_list: {}", num_list[1]);
-    println!("Third element of the num_list: {}", num_list[2]);
-
-    // `len()` returns the count of elements in the array.
-    println!("Number of elements in array: {}", num_list.len());
-
-    // Arrays are stack allocated. 
-    //Expected 16bytes
-    println!("Array occupies {} bytes", mem::size_of_val(&num_list));
-
-    // All elements can be initialized to the same value.
-    let same_value: [i32; 5] = [6; 5];
-    println!("Same value is repeated: {:?}", same_value);
+    str_array();
+    int_array();
 }

@@ -1,4 +1,4 @@
-mod array_slice_sample;
+mod array_sample;
 mod for_sample;
 mod hashmap_sample;
 mod ownership_sample;
@@ -9,7 +9,7 @@ mod vec_sample;
 
 fn main() {
     println!("*** Array and Slice ***");
-    array_slice_sample::array();
+    array_sample::array();
     println!("*************************");
     println!("");
 
